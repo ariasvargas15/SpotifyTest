@@ -1,3 +1,6 @@
+include ':usecases'
+include ':data'
+include ':domain'
 include ':spotify-auth-release'
 include ':app'
 rootProject.name = "SpotifyTest"
