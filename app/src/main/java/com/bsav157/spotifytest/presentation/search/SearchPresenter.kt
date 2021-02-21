@@ -1,5 +1,6 @@
 package com.bsav157.spotifytest.presentation.search
 
+import android.util.Log
 import com.bsav157.spotifytest.domain.SearchParams
 import com.bsav157.spotifytest.presentation.commons.ScopeImpl
 import com.bsav157.spotifytest.usecases.DoSearch
@@ -15,6 +16,7 @@ class SearchPresenter @Inject constructor(
         launch {
             val search = doSearch.invoke(query, arrayOf("artist"), SearchParams(arrayOf(), 20, 0))
             view.showSearch(search)
+            Log.e("something", search.toString())
         }
     }
 }
