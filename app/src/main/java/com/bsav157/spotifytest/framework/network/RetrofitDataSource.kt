@@ -1,10 +1,10 @@
-package com.bsav157.spotifytest.network
+package com.bsav157.spotifytest.framework.network
 
 import com.bsav157.spotifytest.data.sources.RemoteSource
 import com.bsav157.spotifytest.domain.ArtistAlbums
 import com.bsav157.spotifytest.domain.Search
 import com.bsav157.spotifytest.domain.SearchParams
-import com.bsav157.spotifytest.network.converters.convertToDomain
+import com.bsav157.spotifytest.framework.network.converters.convertToDomain
 
 class RetrofitDataSource constructor(private val apiService: ApiService) : RemoteSource {
 
@@ -13,7 +13,13 @@ class RetrofitDataSource constructor(private val apiService: ApiService) : Remot
         type: Array<String>,
         searchParams: SearchParams
     ): Search =
-        apiService.doSearch(query, type, searchParams.market, searchParams.limit, searchParams.offset).convertToDomain()
+        apiService.doSearch(
+            query,
+            type,
+            searchParams.market,
+            searchParams.limit,
+            searchParams.offset
+        ).convertToDomain()
 
     override suspend fun getAlbumsByArtist(
         artistId: String,

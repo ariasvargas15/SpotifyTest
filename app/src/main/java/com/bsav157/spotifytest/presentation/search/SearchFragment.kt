@@ -28,7 +28,7 @@ class SearchFragment : Fragment(), ISearch.View {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentSearchBinding.inflate(inflater, container, false)
         val view = binding.root
         navController = findNavController()
@@ -54,6 +54,8 @@ class SearchFragment : Fragment(), ISearch.View {
     }
 
     override fun showSearch(search: Search) {
-        navController.navigate(R.id.action_searchFragment_to_artistFragment)
+        val bundle = Bundle()
+        bundle.putSerializable("search", search)
+        navController.navigate(R.id.action_searchFragment_to_artistFragment, bundle)
     }
 }

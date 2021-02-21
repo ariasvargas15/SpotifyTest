@@ -1,7 +1,7 @@
-package com.bsav157.spotifytest.network.converters
+package com.bsav157.spotifytest.framework.network.converters
 
 import com.bsav157.spotifytest.domain.*
-import com.bsav157.spotifytest.network.models.*
+import com.bsav157.spotifytest.framework.network.models.*
 
 
 fun AlbumNetwork.convertToDomain(): Album =

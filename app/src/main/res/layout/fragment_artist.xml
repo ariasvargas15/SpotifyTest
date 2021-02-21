@@ -1,14 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/black"
+    android:fillViewport="true"
     tools:context=".presentation.artist.ArtistFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
 
-</FrameLayout>
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/image_artist"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="30dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearance="@style/ShapeAppearance.App.CircleImageView"
+            app:srcCompat="@drawable/ic_spotify" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_artist_name"
+            style="@style/TitleAppearance"
+            android:layout_marginTop="20dp"
+            android:text="@string/artist_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/image_artist" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_followers"
+            style="@style/SubtitleAppearance"
+            android:layout_marginTop="15dp"
+            android:text="@string/followers"
+            app:layout_constraintEnd_toStartOf="@+id/text_amount_followers"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text_artist_name" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_amount_followers"
+            style="@style/SubtitleAppearance"
+            android:layout_marginTop="15dp"
+            android:text="@string/number_followers"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/text_followers"
+            app:layout_constraintTop_toBottomOf="@id/text_artist_name" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_popularity"
+            style="@style/SubtitleAppearance"
+            android:layout_marginTop="10dp"
+            android:text="@string/popularity"
+            app:layout_constraintEnd_toStartOf="@+id/text_number_popularity"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text_followers" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_number_popularity"
+            style="@style/SubtitleAppearance"
+            android:layout_marginTop="10dp"
+            android:text="@string/number_popularity"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/text_popularity"
+            app:layout_constraintTop_toBottomOf="@id/text_amount_followers" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_albums"
+            style="@style/TitleAppearance"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/albums"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text_popularity" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_albums"
+            app:layout_constraintVertical_bias="0.0" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

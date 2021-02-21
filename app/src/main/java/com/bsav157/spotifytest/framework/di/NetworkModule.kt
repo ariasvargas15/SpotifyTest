@@ -1,12 +1,11 @@
 package com.bsav157.spotifytest.framework.di
 
 import android.app.Application
-import com.bsav157.spotifytest.network.ApiService
-import com.bsav157.spotifytest.network.OAuthInterceptor
+import com.bsav157.spotifytest.framework.network.ApiService
+import com.bsav157.spotifytest.framework.network.OAuthInterceptor
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
-import dagger.hilt.android.components.ActivityComponent
 import dagger.hilt.components.SingletonComponent
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit

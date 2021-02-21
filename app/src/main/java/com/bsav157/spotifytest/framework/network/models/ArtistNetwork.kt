@@ -1,4 +1,4 @@
-package com.bsav157.spotifytest.network.models
+package com.bsav157.spotifytest.framework.network.models
 
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
