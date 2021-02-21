@@ -2,5 +2,6 @@
     <string name="app_name">SpotifyTest</string>
     <string name="client_id">f92c05bbc5cc42e99bed7d421b89efc7</string>
     <string name="redirect_uri">"com.bsav157.spotifytest://callback"</string>
+    <string name="login">LOG IN</string>
 
 </resources>
