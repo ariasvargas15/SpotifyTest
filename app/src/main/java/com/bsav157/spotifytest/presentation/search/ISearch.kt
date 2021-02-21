@@ -1,8 +1,8 @@
-package com.bsav157.spotifytest.presentation.main
+package com.bsav157.spotifytest.presentation.search
 
 import com.bsav157.spotifytest.domain.Search
 
-interface IMain {
+interface ISearch {
     interface View {
         fun showSearch(search: Search)
     }
