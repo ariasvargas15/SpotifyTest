@@ -47,6 +47,8 @@ class ArtistFragment : Fragment(), IArtist.View, OnClickAlbum {
         _binding = FragmentArtistBinding.inflate(inflater, container, false)
         val view = binding.root
         navController = findNavController()
+        binding.progress.isActivated = true
+        binding.progress.show()
         fillData()
         presenter.getAlbums(artist.id)
         return view
@@ -76,6 +78,7 @@ class ArtistFragment : Fragment(), IArtist.View, OnClickAlbum {
     }
 
     override fun showAlbums(artistAlbums: ArtistAlbums) {
+        binding.progress.hide()
         albumAdapter = AlbumAdapter()
         binding.recyclerAlbums.adapter = albumAdapter
         albumAdapter.albums = artistAlbums.albums

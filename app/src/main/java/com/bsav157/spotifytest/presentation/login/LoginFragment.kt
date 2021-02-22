@@ -39,6 +39,8 @@ class LoginFragment : Fragment() {
         clientId = getString(R.string.client_id)
         redirectUri = getString(R.string.redirect_uri)
         navController = findNavController()
+        binding.progress.isActivated = true
+        binding.progress.hide()
         onClickLogin()
         return view
     }
@@ -50,6 +52,7 @@ class LoginFragment : Fragment() {
 
     private fun onClickLogin() {
         binding.buttonLogin.setOnClickListener {
+            binding.progress.show()
             openLoginActivity()
         }
     }
@@ -68,6 +71,7 @@ class LoginFragment : Fragment() {
 
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, intent: Intent?) {
+        binding.progress.hide()
         if (requestCode == LoginActivity.REQUEST_CODE) {
             val response = AuthorizationClient.getResponse(resultCode, intent)
             when (response.type) {

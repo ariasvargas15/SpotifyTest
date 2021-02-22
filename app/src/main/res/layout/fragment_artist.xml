@@ -96,6 +96,16 @@
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             />
 
+        <androidx.core.widget.ContentLoadingProgressBar
+            android:id="@+id/progress"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:indeterminate="true"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_albums" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>
