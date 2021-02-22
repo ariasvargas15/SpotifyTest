@@ -5,10 +5,26 @@ import com.bsav157.spotifytest.framework.network.models.*
 
 
 fun AlbumNetwork.convertToDomain(): Album =
-    Album(id, images.map { it.convertToDomain() }, name, totalTracks, uri, markets, url.convertToDomain())
+    Album(
+        id,
+        images.map { it.convertToDomain() },
+        name,
+        totalTracks,
+        uri,
+        markets,
+        url.convertToDomain()
+    )
 
 fun ArtistNetwork.convertToDomain(): Artist =
-    Artist(id, followers.convertToDomain(), genres, images.map { it.convertToDomain() }, name, popularity, uri)
+    Artist(
+        id,
+        followers.convertToDomain(),
+        genres,
+        images.map { it.convertToDomain() },
+        name,
+        popularity,
+        uri
+    )
 
 fun ArtistAlbumsNetwork.convertToDomain(): ArtistAlbums =
     ArtistAlbums(albums.map { it.convertToDomain() }, limit, offset, total, next, previous)

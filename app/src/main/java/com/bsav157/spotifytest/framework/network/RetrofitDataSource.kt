@@ -25,9 +25,12 @@ class RetrofitDataSource constructor(private val apiService: ApiService) : Remot
         artistId: String,
         includedGroups: Array<String>,
         searchParams: SearchParams
-    ): ArtistAlbums {
-        TODO("Not yet implemented")
-    }
-
-
+    ): ArtistAlbums =
+        apiService.getAlbumsByArtist(
+            artistId,
+            includedGroups,
+            searchParams.market,
+            searchParams.limit,
+            searchParams.offset
+        ).convertToDomain()
 }

@@ -10,6 +10,6 @@ data class ArtistAlbumsNetwork(
     @SerializedName("limit") val limit: Int,
     @SerializedName("offset") val offset: Int,
     @SerializedName("total") val total: Int,
-    @SerializedName("next") val next: String,
-    @SerializedName("previous") val previous: String,
+    @SerializedName("next") val next: String?,
+    @SerializedName("previous") val previous: String?,
 ) : Parcelable

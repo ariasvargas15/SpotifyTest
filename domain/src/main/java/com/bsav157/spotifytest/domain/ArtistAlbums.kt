@@ -7,6 +7,6 @@ data class ArtistAlbums(
     val limit: Int,
     val offset: Int,
     val total: Int,
-    val next: String,
-    val previous: String,
+    val next: String?,
+    val previous: String?,
 ): Serializable

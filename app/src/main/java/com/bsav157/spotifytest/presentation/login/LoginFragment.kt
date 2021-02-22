@@ -4,29 +4,27 @@ import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import com.bsav157.spotifytest.R
 import com.bsav157.spotifytest.databinding.FragmentLoginBinding
-import com.bsav157.spotifytest.domain.Search
 import com.spotify.sdk.android.auth.AuthorizationClient
 import com.spotify.sdk.android.auth.AuthorizationRequest
 import com.spotify.sdk.android.auth.AuthorizationResponse
 import com.spotify.sdk.android.auth.LoginActivity
 import dagger.hilt.android.AndroidEntryPoint
-import javax.inject.Inject
 
 @AndroidEntryPoint
 class LoginFragment : Fragment() {
 
     private lateinit var editor: SharedPreferences.Editor
     private lateinit var sharedPreferences: SharedPreferences
-    private lateinit var clientId : String
-    private lateinit var redirectUri : String
+    private lateinit var clientId: String
+    private lateinit var redirectUri: String
     private var _binding: FragmentLoginBinding? = null
     private val binding get() = _binding!!
     private lateinit var navController: NavController
@@ -57,10 +55,15 @@ class LoginFragment : Fragment() {
     }
 
     private fun openLoginActivity() {
-        val builder = AuthorizationRequest.Builder(clientId, AuthorizationResponse.Type.TOKEN, redirectUri)
+        val builder =
+            AuthorizationRequest.Builder(clientId, AuthorizationResponse.Type.TOKEN, redirectUri)
         builder.setScopes(arrayOf("streaming"))
         val request = builder.build()
-        AuthorizationClient.openLoginActivity(requireActivity(), LoginActivity.REQUEST_CODE, request)
+        AuthorizationClient.openLoginActivity(
+            requireActivity(),
+            LoginActivity.REQUEST_CODE,
+            request
+        )
     }
 
 

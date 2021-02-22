@@ -26,5 +26,14 @@
         android:id="@+id/artistFragment"
         android:name="com.bsav157.spotifytest.presentation.artist.ArtistFragment"
         android:label="fragment_artist"
-        tools:layout="@layout/fragment_artist" />
+        tools:layout="@layout/fragment_artist" >
+        <action
+            android:id="@+id/action_artistFragment_to_albumFragment"
+            app:destination="@id/albumFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/albumFragment"
+        android:name="com.bsav157.spotifytest.presentation.album.AlbumFragment"
+        android:label="fragment_album"
+        tools:layout="@layout/fragment_album" />
 </navigation>

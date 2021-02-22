@@ -13,5 +13,8 @@
     <string name="number_popularity">15 of 100</string>
     <string name="albums">albums</string>
     <string name="popularity">popularity:\u0020</string>
+    <string name="available_in">Available in</string>
+    <string name="album_name">album name</string>
+    <string name="open_in_spotify">Open in spotify</string>
 
 </resources>
