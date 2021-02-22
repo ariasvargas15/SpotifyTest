@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.widget.ContentLoadingProgressBar
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
@@ -33,12 +34,16 @@ class SearchFragment : Fragment(), ISearch.View {
         val view = binding.root
         navController = findNavController()
         onClickSearch()
+        binding.progress.isActivated = true
+        binding.progress.hide()
         return view
     }
 
     private fun onClickSearch() {
         binding.buttonSearch.setOnClickListener {
             hideKeyboard()
+
+            binding.progress.show()
             val query = binding.inputSearch.text.toString()
             if (query.isNotEmpty()) {
                 presenter.getSearch(query)
@@ -56,7 +61,7 @@ class SearchFragment : Fragment(), ISearch.View {
     }
 
     override fun showSearch(search: Search) {
-
+        binding.progress.hide()
         if (search.artistSearch.artists.isNotEmpty()){
             val bundle = Bundle()
             bundle.putSerializable("search", search)
@@ -65,7 +70,5 @@ class SearchFragment : Fragment(), ISearch.View {
             Snackbar.make(binding.root, "There are no results for your search", Snackbar.LENGTH_LONG)
                 .show()
         }
-
-
     }
 }
