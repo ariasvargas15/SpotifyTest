@@ -1,4 +1,4 @@
-package com.bsav157.spotifytest.network
+package com.bsav157.spotifytest.framework.network
 
 import okhttp3.Interceptor
 

@@ -14,7 +14,7 @@ class SearchPresenter @Inject constructor(
 
     override fun getSearch(query: String) {
         launch {
-            val search = doSearch.invoke(query, arrayOf("artist"), SearchParams(arrayOf(), 20, 0))
+            val search = doSearch.invoke(query, arrayOf("artist"), SearchParams(arrayOf(), 1, 0))
             view.showSearch(search)
             Log.e("something", search.toString())
         }

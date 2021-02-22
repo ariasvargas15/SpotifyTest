@@ -1,5 +1,7 @@
 package com.bsav157.spotifytest.domain
 
+import java.io.Serializable
+
 data class Artist(
     val id: String,
     val followers: Followers,
@@ -8,4 +10,4 @@ data class Artist(
     val name: String,
     val popularity: Int,
     val uri: String,
-)
+): Serializable
